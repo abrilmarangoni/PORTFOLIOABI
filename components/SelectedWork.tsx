@@ -1,17 +1,24 @@
 "use client";
 
+import { SentientSphere } from "./SentientSphere";
+
 interface ProjectCardProps {
   title: string;
   projectName: string;
   date: string;
+  children?: React.ReactNode;
 }
 
-function ProjectCard({ title, projectName, date }: ProjectCardProps) {
+function ProjectCard({ title, projectName, date, children }: ProjectCardProps) {
   return (
     <div className="group cursor-pointer">
       {/* Image container */}
-      <div className="bg-black border border-[#333] rounded-t-[16px] aspect-[496/280] flex items-center justify-center">
-        <p className="text-white text-[14px] lg:text-[16px] xl:text-[18px] font-normal">{title}</p>
+      <div className="bg-black border border-[#333] rounded-t-[16px] aspect-[496/280] flex items-center justify-center overflow-hidden">
+        {children ? (
+          children
+        ) : (
+          <p className="text-white text-[14px] lg:text-[16px] xl:text-[18px] font-normal">{title}</p>
+        )}
       </div>
       {/* Footer */}
       <div className="bg-[#111] border border-[#333] border-t-0 rounded-b-[16px] h-[56px] lg:h-[64px] xl:h-[69px] px-4 flex items-center justify-between">
@@ -32,15 +39,27 @@ export default function SelectedWork() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 xl:gap-6">
         <ProjectCard
-          title="3d Orb Loop"
-          projectName="Project Name"
+          title=""
+          projectName="3d Orb Loop"
           date="Dec 22, 2025"
-        />
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videobueno.mp4" type="video/mp4" />
+          </video>
+        </ProjectCard>
         <ProjectCard
-          title="Avance Loop"
-          projectName="Project Name"
-          date="Dec 22, 2025"
-        />
+          title=""
+          projectName="ABA AI - full stack project"
+          date="Dec 28, 2025"
+        >
+          <SentientSphere />
+        </ProjectCard>
         <ProjectCard
           title="Basement's Challenge Loop"
           projectName="Project Name"
