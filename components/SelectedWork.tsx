@@ -50,7 +50,7 @@ export default function SelectedWork() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/videobueno.mp4" type="video/mp4" />
+            <source src="/senal.mp4" type="video/mp4" />
           </video>
         </ProjectCard>
         <ProjectCard
