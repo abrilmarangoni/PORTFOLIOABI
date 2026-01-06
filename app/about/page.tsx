@@ -65,7 +65,7 @@ export default function AboutPage() {
           {/* Content sections */}
           <div className="text-[#999] text-[13px] font-normal leading-[1.5] space-y-6">
             <div>
-              <h2 className="text-white text-[16px] mb-3">Hi, I'm Abie</h2>
+              <h2 className="text-white text-[16px] mb-3">Hi, I&apos;m Abie</h2>
               <p>
                 Design Engineer — Generative AI @{" "}
                 <span className="text-[#ff7a28]">The University of Texas at Austin.</span>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-white text-[16px] mb-3">What I do</h2>
               <p>
-                I'm currently focused on shaping brands and websites for dev tools. 
+                I&apos;m currently focused on shaping brands and websites for dev tools. 
                 I work at the intersection of design, technology, and strategy to create 
                 useful, clear, and human solutions.
               </p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               <h2 className="text-white text-[16px] mb-3">My approach</h2>
               <p>
                 My motivation is simple: build products with real impact by understanding 
-                people, the business, and the "why" behind every decision. I believe the 
+                people, the business, and the &quot;why&quot; behind every decision. I believe the 
                 best solutions come from deep empathy and clear thinking.
               </p>
             </div>
@@ -102,20 +102,20 @@ export default function AboutPage() {
               <h2 className="text-white text-[16px] mb-3">Beyond work</h2>
               <p>
                 [Add your interests, hobbies, what you love to do outside of work, 
-                music you like, places you've been, things that inspire you, etc.]
+                music you like, places you&apos;ve been, things that inspire you, etc.]
               </p>
             </div>
 
             <div>
               <h2 className="text-white text-[16px] mb-3">Location</h2>
               <p>
-                I'm based in Mar del Plata, Argentina, where it's currently{" "}
+                I&apos;m based in Mar del Plata, Argentina, where it&apos;s currently{" "}
                 <span className="text-white">{currentTime}</span>.
               </p>
             </div>
 
             <div className="pt-4">
-              <h2 className="text-white text-[16px] mb-3">Let's connect</h2>
+              <h2 className="text-white text-[16px] mb-3">Let&apos;s connect</h2>
               <div className="flex items-center gap-[26px]">
                 <a
                   href="mailto:abril@example.com"

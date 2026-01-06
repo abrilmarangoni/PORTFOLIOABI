@@ -60,20 +60,20 @@ export default function AboutSection() {
           <span className="text-[#ff7a28]">The University of Texas at Austin.</span>
         </p>
         <p className="mt-6">
-          I'm currently focused on shaping brands and websites for dev tools.
+          I&apos;m currently focused on shaping brands and websites for dev tools.
         </p>
         <p className="mt-6">
-          I work at the intersection of design, technology, and strategy to create useful, clear, and human solutions. My motivation is simple: build products with real impact by understanding people, the business, and the "why" behind every decision.
+          I work at the intersection of design, technology, and strategy to create useful, clear, and human solutions. My motivation is simple: build products with real impact by understanding people, the business, and the &quot;why&quot; behind every decision.
         </p>
         <p className="mt-6">
-          I'm based in Mar del Plata, Arg, where it's currently{" "}
+          I&apos;m based in Mar del Plata, Arg, where it&apos;s currently{" "}
           <span className="text-white">{currentTime}</span>.
         </p>
       </div>
 
       {/* Let's Connect Header */}
       <h3 className="text-white text-[16px] font-normal leading-tight mt-8">
-        Let's Connect
+        Let&apos;s Connect
       </h3>
 
       {/* Links */}
