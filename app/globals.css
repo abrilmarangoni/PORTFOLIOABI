@@ -41,3 +41,76 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Light Mode */
+html.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.light-mode body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.light-mode main {
+  background-color: #ffffff !important;
+}
+
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3,
+html.light-mode .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode .text-\[\#999\] {
+  color: #333333 !important;
+  font-weight: 400 !important;
+}
+
+html.light-mode .border-\[\#333\] {
+  border-color: #e5e5e5 !important;
+}
+
+html.light-mode nav > div {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: #e5e5e5 !important;
+}
+
+html.light-mode nav a {
+  color: #000000 !important;
+}
+
+html.light-mode nav .bg-\[\#333\] {
+  background-color: #e5e5e5 !important;
+}
+
+html.light-mode .bg-\[\#111\] {
+  background-color: #f5f5f5 !important;
+}
+
+html.light-mode svg {
+  stroke: #000000 !important;
+  opacity: 1 !important;
+}
+
+html.light-mode svg path,
+html.light-mode svg circle,
+html.light-mode svg line,
+html.light-mode svg rect {
+  stroke: #000000 !important;
+}
+
+/* Keep orange color in both modes */
+html.light-mode .text-\[\#ff7a28\] {
+  color: #ff7a28 !important;
+}
+
+html.light-mode a:hover {
+  color: #666666 !important;
+}
+
+html.light-mode a .text-\[\#ff7a28\]:hover {
+  color: #ff7a28 !important;
+}
+

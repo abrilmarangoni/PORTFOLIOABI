@@ -5,6 +5,25 @@ import Image from "next/image";
 
 const profileImage = "/perfilabi.jpeg";
 
+export function AboutImage() {
+  return (
+    <a href="/about" className="aspect-[551/352] border border-[#333] rounded-[10px] overflow-hidden relative w-full block group cursor-pointer">
+      <Image
+        src={profileImage}
+        alt="Abril Marangoni"
+        fill
+        className="object-cover transition-all duration-300 group-hover:brightness-[0.4]"
+        priority
+        sizes="(max-width: 768px) 100vw, 550px"
+      />
+      {/* Hover overlay text */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        <span className="text-white text-[16px] font-normal">not so important facts about me →</span>
+      </div>
+    </a>
+  );
+}
+
 export default function AboutSection() {
   const [currentTime, setCurrentTime] = useState("");
 
@@ -16,6 +35,7 @@ export default function AboutSection() {
         minute: "2-digit",
         second: "2-digit",
         hour12: true,
+        timeZone: "America/Argentina/Buenos_Aires",
       });
       setCurrentTime(timeString.toLowerCase());
     };
@@ -27,91 +47,68 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 xl:gap-6 mb-8 lg:mb-10 xl:mb-12">
-      {/* Profile Image - Ocupa 1 columna */}
-      <div className="aspect-[496/317] border border-[#333] rounded-[16px] overflow-hidden relative">
-        <Image
-          src={profileImage}
-          alt="Abril Marangoni"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 1024px) 100vw, 33vw"
-        />
-      </div>
+    <>
+      {/* Name */}
+      <h1 className="text-white text-[16px] font-normal leading-tight">
+        Abie Marangoni
+      </h1>
 
-      {/* About Content - Ocupa 2 columnas, texto llega hasta mitad del tercer cuadrante */}
-      <div className="lg:col-span-2 flex flex-col lg:pr-[25%]">
-        {/* Name */}
-        <h1 className="text-white text-[14px] lg:text-[15px] xl:text-[16px] font-normal leading-tight">
-          Abril Marangoni
-        </h1>
-        
-        {/* Title */}
-        <p className="text-[#999] text-[12px] lg:text-[13px] xl:text-[13px] font-normal mt-2">
-          Design Engineer — Generative AI @ The University of Texas at Austin.
+      {/* About */}
+      <div className="text-[#999] text-[13px] font-normal leading-[1.5] mt-4">
+        <p>
+          Design Engineer — Generative AI @{" "}
+          <span className="text-[#ff7a28]">The University of Texas at Austin.</span>
         </p>
-
-        {/* About Me Header */}
-        <h2 className="text-white text-[14px] lg:text-[15px] xl:text-[16px] font-normal mt-8 lg:mt-10 xl:mt-12 leading-tight">
-          About Me
-        </h2>
-
-        {/* About Me Content */}
-        <div className="text-[#999] text-[12px] lg:text-[13px] xl:text-[13px] font-normal leading-[1.6] mt-2 flex-1">
-          <p>
-            I'm currently focused on shaping brands and websites for dev tools.
-          </p>
-          <p className="mt-3">
-            I work at the intersection of design, technology, and strategy to create useful, clear, and human solutions. My motivation is simple: build products with real impact by understanding people, the business, and the "why" behind every decision.
-          </p>
-          <p className="mt-3">
-            I'm based in Mar del Plata, Argentina, where it's currently{" "}
-            <span className="text-white">{currentTime}</span>.
-          </p>
-        </div>
-
-        {/* Let's Connect - alineado con el final de la imagen */}
-        <div className="flex flex-wrap items-center gap-4 lg:gap-6 mt-8">
-          <span className="text-[#999] text-[12px] lg:text-[13px] font-normal">
-            Let's Connect
-          </span>
-          <a
-            href="mailto:abril@example.com"
-            className="text-white text-[12px] lg:text-[13px] hover:text-[#999] transition-colors"
-            aria-label="Send email"
-          >
-            Email ↗
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-[12px] lg:text-[13px] hover:text-[#999] transition-colors"
-            aria-label="Visit LinkedIn profile"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-[12px] lg:text-[13px] hover:text-[#999] transition-colors"
-            aria-label="Visit Twitter profile"
-          >
-            Twitter ↗
-          </a>
-          <a
-            href="/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-[12px] lg:text-[13px] hover:text-[#999] transition-colors"
-            aria-label="Download CV"
-          >
-            CV ↗
-          </a>
-        </div>
+        <p className="mt-6">
+          I'm currently focused on shaping brands and websites for dev tools.
+        </p>
+        <p className="mt-6">
+          I work at the intersection of design, technology, and strategy to create useful, clear, and human solutions. My motivation is simple: build products with real impact by understanding people, the business, and the "why" behind every decision.
+        </p>
+        <p className="mt-6">
+          I'm based in Mar del Plata, Arg, where it's currently{" "}
+          <span className="text-white">{currentTime}</span>.
+        </p>
       </div>
-    </section>
+
+      {/* Let's Connect Header */}
+      <h3 className="text-white text-[16px] font-normal leading-tight mt-8">
+        Let's Connect
+      </h3>
+
+      {/* Links */}
+      <div className="flex items-center gap-[26px] text-[#999] text-[13px] mt-4">
+        <a
+          href="mailto:abril@example.com"
+          className="relative hover:text-white transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[#ff7a28] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out after:origin-left"
+        >
+          Email ↗
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative hover:text-white transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[#ff7a28] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out after:origin-left"
+        >
+          LinkedIn ↗
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative hover:text-white transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[#ff7a28] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out after:origin-left"
+        >
+          Twitter ↗
+        </a>
+        <a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative hover:text-white transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[#ff7a28] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out after:origin-left"
+        >
+          CV ↗
+        </a>
+      </div>
+    </>
   );
 }
