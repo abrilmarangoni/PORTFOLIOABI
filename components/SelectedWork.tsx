@@ -45,6 +45,13 @@ export default function SelectedWork() {
       <div className="flex flex-col gap-8 sm:gap-12">
         <ProjectCard
           title=""
+          projectName="ABA AI - full stack project"
+          date="Dec 28, 2025"
+        >
+          <SentientSphere />
+        </ProjectCard>
+        <ProjectCard
+          title=""
           projectName="3d Orb Loop"
           date="Dec 22, 2025"
         >
@@ -57,13 +64,6 @@ export default function SelectedWork() {
           >
             <source src="/senal.mp4" type="video/mp4" />
           </video>
-        </ProjectCard>
-        <ProjectCard
-          title=""
-          projectName="ABA AI - full stack project"
-          date="Dec 28, 2025"
-        >
-          <SentientSphere />
         </ProjectCard>
         <ProjectCard
           title=""
@@ -100,7 +100,7 @@ export default function SelectedWork() {
       {/* View More */}
       <div className="mt-16 flex justify-center">
         <a 
-          href="#" 
+          href="/projects" 
           className="flex items-center gap-1 text-[#999] text-[13px] font-normal hover:text-[#ff7a28] transition-colors group"
         >
           <span>View More</span>

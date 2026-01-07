@@ -61,18 +61,18 @@ export default function AboutSection() {
   return (
     <>
       {/* About */}
-      <div className="text-[#999] text-[13px] font-medium leading-[1.5]">
-        <p>
+      <div className="text-[13px] font-medium leading-[1.5]">
+        <p className="text-white">
           Full-Stack Developer · UX/UI Postgraduate · Generative AI
         </p>
-        <p className="mt-6">
+        <p className="mt-6 text-[#ddd]">
           Hi I&apos;m Abie a nerd who loves AI, math, and building things. I spend most of my time coding—apps, websites, systems—and using AI tools to move faster and think better.
         </p>
-        <p className="mt-6">
+        <p className="mt-6 text-[#ddd]">
           I care about the people using what I build. Design, for me, is the layer that turns code into something approachable, expressive, and human.
         </p>
-        <p className="mt-6">
-          I&apos;m based in Mar del Plata, Arg, where it&apos;s currently{" "}
+        <p className="mt-6 text-[#ddd]">
+          I&apos;m based in Mar del Plata, Argentina, where it&apos;s currently{" "}
           <span className="text-[#ff7a28]">{currentTime}</span>.
         </p>
       </div>
