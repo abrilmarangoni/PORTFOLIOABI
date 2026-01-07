@@ -1,6 +1,7 @@
 import AboutSection, { AboutImage } from "@/components/AboutSection";
 import SelectedWork from "@/components/SelectedWork";
 import Journal from "@/components/Journal";
+import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
 
 export default function Home() {
@@ -11,14 +12,14 @@ export default function Home() {
       <div className="hidden lg:block absolute right-[calc(50%-320px)] top-0 bottom-0 w-px opacity-60" style={{ backgroundImage: 'repeating-linear-gradient(180deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
 
       {/* Centered single column layout */}
-      <div className="flex flex-col items-center px-6 md:px-8 py-16 md:py-24 lg:py-32 pb-32 relative z-10">
+      <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 lg:py-32 pb-24 sm:pb-32 relative z-10">
         {/* Image */}
         <div className="w-full max-w-[550px]">
           <AboutImage />
         </div>
         
         {/* Horizontal line after image - full width */}
-        <div className="w-full my-[72px]">
+        <div className="w-full my-12 md:my-16 lg:my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
@@ -28,7 +29,7 @@ export default function Home() {
         </div>
         
         {/* Horizontal line between Let's Connect and Selected Work - full width */}
-        <div className="w-full my-[72px]">
+        <div className="w-full my-12 md:my-16 lg:my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
@@ -37,7 +38,7 @@ export default function Home() {
         </div>
         
         {/* Horizontal line after Selected Work - full width */}
-        <div className="w-full my-[72px]">
+        <div className="w-full my-12 md:my-16 lg:my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
@@ -46,11 +47,21 @@ export default function Home() {
         </div>
         
         {/* Horizontal line after Journal - full width */}
-        <div className="w-full my-[72px]">
+        <div className="w-full my-12 md:my-16 lg:my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
-        {/* New Section - placeholder */}
+        {/* Contact Section */}
+        <div className="w-full max-w-[550px] flex flex-col">
+          <Contact />
+        </div>
+        
+        {/* Horizontal line after Contact - full width */}
+        <div className="w-full my-12 md:my-16 lg:my-[72px]">
+          <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
+        </div>
+        
+        {/* New Section */}
         <div className="w-full max-w-[550px] flex flex-col">
           {/* New section content will go here */}
         </div>

@@ -13,17 +13,21 @@ function ProjectCard({ title, projectName, date, children }: ProjectCardProps) {
   return (
     <div className="group cursor-pointer w-full">
       {/* Image container */}
-      <div className="bg-black border border-[#333] rounded-t-[16px] aspect-[496/280] flex items-center justify-center overflow-hidden">
+      <div className="bg-black border border-[#333] rounded-t-[16px] aspect-[496/280] relative overflow-hidden">
         {children ? (
-          children
+          <div className="absolute inset-0 w-full h-full">
+            {children}
+          </div>
         ) : (
-          <p className="text-white text-[18px] font-normal">{title}</p>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-white text-[18px] font-normal">{title}</p>
+          </div>
         )}
       </div>
       {/* Footer */}
-      <div className="bg-[#111] border border-[#333] border-t-0 rounded-b-[16px] h-[69px] px-4 flex items-center justify-between">
-        <p className="text-white text-[13px] font-normal">{projectName}</p>
-        <p className="text-[#999] text-[13px] font-normal">{date}</p>
+      <div className="bg-[#111] border border-[#333] border-t-0 rounded-b-[16px] h-[60px] sm:h-[69px] px-4 flex items-center justify-between">
+        <p className="text-white text-[12px] sm:text-[13px] font-normal">{projectName}</p>
+        <p className="text-[#999] text-[12px] sm:text-[13px] font-normal">{date}</p>
       </div>
     </div>
   );
@@ -38,7 +42,7 @@ export default function SelectedWork() {
       </h2>
 
       {/* Project Cards - Stacked vertically */}
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-8 sm:gap-12">
         <ProjectCard
           title=""
           projectName="3d Orb Loop"

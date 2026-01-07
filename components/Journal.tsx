@@ -9,21 +9,21 @@ interface JournalEntryProps {
 function JournalEntry({ year, title }: JournalEntryProps) {
   return (
     <div className="w-full group cursor-pointer">
-      <div className="flex items-center gap-6 py-2 transition-opacity duration-300 group-hover:opacity-70">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6 py-2 transition-opacity duration-300 group-hover:opacity-70">
         {/* Year */}
-        <p className="text-white text-[16px] font-normal w-[49px] flex-shrink-0">
+        <p className="text-white text-[14px] sm:text-[16px] font-normal w-[45px] sm:w-[49px] flex-shrink-0">
           {year}
         </p>
         
         {/* Title */}
-        <p className="text-white text-[16px] font-normal flex-1">
+        <p className="text-white text-[14px] sm:text-[16px] font-normal flex-1 leading-tight">
           {title}
         </p>
         
         {/* View Article link */}
         <a 
           href="#" 
-          className="flex items-center gap-1 flex-shrink-0 text-white text-[13px] font-normal group-hover:text-[#ff7a28] transition-colors"
+          className="flex items-center gap-1 flex-shrink-0 text-white text-[12px] sm:text-[13px] font-normal group-hover:text-[#ff7a28] transition-colors mt-1 sm:mt-0"
         >
           <span>View Article</span>
           <svg 
@@ -85,12 +85,12 @@ export default function Journal() {
   return (
     <section className="w-full">
       {/* Title */}
-      <h2 className="text-white text-[18px] font-normal mb-8">
+      <h2 className="text-white text-[16px] sm:text-[18px] font-normal mb-6 sm:mb-8">
         Journal
       </h2>
 
       {/* Journal Entries */}
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1">
         {entries.map((entry, index) => (
           <JournalEntry
             key={index}
