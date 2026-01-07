@@ -49,7 +49,8 @@ export default function AboutSection() {
         hour12: true,
         timeZone: "America/Argentina/Buenos_Aires",
       });
-      setCurrentTime(timeString.toLowerCase());
+      // Format: "11:27:16 am" (all in one line)
+      setCurrentTime(timeString.toLowerCase().replace(/\s+/g, " "));
     };
 
     updateTime();
@@ -73,7 +74,7 @@ export default function AboutSection() {
         </p>
         <p className="mt-6 text-[#ddd]">
           I&apos;m based in Mar del Plata, Argentina, where it&apos;s currently{" "}
-          <span className="text-[#ff7a28]">{currentTime}</span>.
+          <span className="text-[#ff7a28] whitespace-nowrap">{currentTime}</span>.
         </p>
       </div>
     </>

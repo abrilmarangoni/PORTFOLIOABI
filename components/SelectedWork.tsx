@@ -1,12 +1,69 @@
 "use client";
 
+import { useState, useRef, ReactNode, useEffect } from "react";
 import { SentientSphere } from "./SentientSphere";
+
+function VideoWithHover({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    // Load first frame when component mounts
+    if (videoRef.current) {
+      const video = videoRef.current;
+      const handleLoadedData = () => {
+        video.currentTime = 0;
+      };
+      video.addEventListener('loadeddata', handleLoadedData);
+      return () => {
+        video.removeEventListener('loadeddata', handleLoadedData);
+      };
+    }
+  }, []);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {
+        // Handle play error silently
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="w-full h-full"
+    >
+      <video
+        ref={videoRef}
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+        preload="auto"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
 
 interface ProjectCardProps {
   title: string;
   projectName: string;
   date: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 function ProjectCard({ title, projectName, date, children }: ProjectCardProps) {
@@ -55,45 +112,21 @@ export default function SelectedWork() {
           projectName="3d Orb Loop"
           date="Dec 22, 2025"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/senal.mp4" type="video/mp4" />
-          </video>
+          <VideoWithHover src="/senal.mp4" />
         </ProjectCard>
         <ProjectCard
           title=""
           projectName="Basement's Challenge Loop"
           date="Dec 22, 2025"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/hooverbasement.mp4" type="video/mp4" />
-          </video>
+          <VideoWithHover src="/hooverbasement.mp4" />
         </ProjectCard>
         <ProjectCard
           title=""
           projectName="Sand - Website Design"
           date="Dec 22, 2025"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/sand.mp4" type="video/mp4" />
-          </video>
+          <VideoWithHover src="/hooversand.mp4" />
         </ProjectCard>
       </div>
       

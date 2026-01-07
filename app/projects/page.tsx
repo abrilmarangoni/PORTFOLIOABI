@@ -43,7 +43,7 @@ const allProjects: Project[] = [
     name: "Sand - Website Design",
     date: "Dec 22, 2025",
     type: "video",
-    media: "/sand.mp4",
+    media: "/hooversand.mp4",
     featured: true,
   },
   // Add more projects here - you can add images or videos
@@ -193,7 +193,7 @@ export default function ProjectsPage() {
             The Entire Collection
           </h1>
           <p className="text-[#999] text-[13px] font-normal">
-            Everything I've managed to finish (so far)
+            Everything I&apos;ve managed to finish (so far)
           </p>
         </div>
 
