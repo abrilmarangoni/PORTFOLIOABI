@@ -119,28 +119,42 @@ function Layout1() {
 // Layout 2: 3 equal columns + full width + 2 wide
 function Layout2() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="aspect-[4/5] bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-          <MockupPlaceholder label="Mockup 1" />
+    <div className="flex flex-col gap-20">
+      <div className="grid grid-cols-3 gap-8 w-full">
+        <div className="flex items-center justify-center">
+          <img src="/91.png" alt="Mockup 1" className="w-full object-contain" />
         </div>
-        <div className="aspect-[4/5] bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-          <MockupPlaceholder label="Mockup 2" />
+        <div className="flex items-center justify-center">
+          <img src="/92.png" alt="Mockup 2" className="w-full object-contain" />
         </div>
-        <div className="aspect-[4/5] bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-          <MockupPlaceholder label="Mockup 3" />
+        <div className="flex items-center justify-center">
+          <img src="/93.png" alt="Mockup 3" className="w-full object-contain" />
         </div>
       </div>
-      <div className="aspect-[21/9] bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-        <MockupPlaceholder label="Mockup 4" />
+      <div className="rounded-[12px] overflow-hidden border border-[#555] w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full object-contain"
+        >
+          <source src="/94.mp4?v=2" type="video/mp4" />
+        </video>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="aspect-video bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-          <MockupPlaceholder label="Mockup 5" />
-        </div>
-        <div className="aspect-video bg-[#111] border border-[#333] rounded-[12px] flex items-center justify-center overflow-hidden hover:border-[#444] transition-colors">
-          <MockupPlaceholder label="Mockup 6" />
-        </div>
+      <div className="rounded-[12px] overflow-hidden w-full">
+        <img src="/96.png" alt="Mockup 5" className="w-full object-contain" />
+      </div>
+      <div className="rounded-[12px] overflow-hidden border border-[#555] w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full object-contain"
+        >
+          <source src="/95.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   );
@@ -267,7 +281,7 @@ export default function ProjectPage() {
         </div>
 
         {/* Switch */}
-        <div className="w-full max-w-[1200px] mb-12 flex justify-center">
+        <div className="w-full max-w-[1200px] mb-20 flex justify-center">
           <ViewSwitch activeView={activeView} onSwitch={setActiveView} />
         </div>
 
