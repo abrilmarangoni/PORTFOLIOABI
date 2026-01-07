@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import { useState, useEffect } from "react";
 
-const profileImage = "/perfilabi.jpeg";
+const profileImage = "/abi.jpeg";
 
 export default function AboutPage() {
   const [currentTime, setCurrentTime] = useState("");
@@ -30,10 +30,6 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-black relative overflow-hidden">
-      {/* Vertical decorative lines */}
-      <div className="hidden lg:block absolute left-[calc(50%-320px)] top-0 bottom-0 w-px" style={{ backgroundImage: 'repeating-linear-gradient(180deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
-      <div className="hidden lg:block absolute right-[calc(50%-320px)] top-0 bottom-0 w-px" style={{ backgroundImage: 'repeating-linear-gradient(180deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
-
       {/* Content */}
       <div className="flex flex-col items-center px-6 md:px-8 py-16 md:py-24 lg:py-32 pb-32 relative z-10">
         <div className="w-full max-w-[550px] flex flex-col">
@@ -45,30 +41,33 @@ export default function AboutPage() {
             ← Back to home
           </a>
 
-          {/* Title */}
-          <h1 className="text-white text-[32px] font-normal leading-tight mb-8">
-            Not so important facts
-          </h1>
-
-          {/* Image */}
-          <div className="aspect-[551/352] border border-[#333] rounded-[10px] overflow-hidden relative w-full mb-8">
-            <Image
-              src={profileImage}
-              alt="Abril Marangoni"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 550px"
-            />
+          {/* Header with title and image */}
+          <div className="flex items-center justify-between gap-6 mb-8">
+            <h1 className="text-white text-[24px] font-normal leading-tight flex-1">
+              I wrote &quot;Hello World&quot; in HTML at 12 and my whole personality shaped around it
+            </h1>
+            {/* Small image in corner */}
+            <div className="w-[120px] h-[120px] border border-[#333] rounded-[10px] overflow-hidden relative flex-shrink-0">
+              <Image
+                src={profileImage}
+                alt="Abril Marangoni"
+                fill
+                className="object-cover"
+                priority
+                sizes="120px"
+              />
+            </div>
           </div>
 
           {/* Content sections */}
-          <div className="text-[#999] text-[13px] font-normal leading-[1.5] space-y-6">
+          <div className="text-[#999] text-[13px] font-normal leading-[1.5] space-y-6 mt-24">
             <div>
               <h2 className="text-white text-[16px] mb-3">Hi, I&apos;m Abie</h2>
+              <p className="text-white text-[14px] mb-2">
+                <span className="text-[#ff7a28]">Design Engineer</span> (Full-Stack & UX/UI)
+              </p>
               <p>
-                Design Engineer — Generative AI @{" "}
-                <span className="text-[#ff7a28]">The University of Texas at Austin.</span>
+                Full-Stack Developer · UX/UI Postgraduate · Generative AI
               </p>
             </div>
 
@@ -110,7 +109,7 @@ export default function AboutPage() {
               <h2 className="text-white text-[16px] mb-3">Location</h2>
               <p>
                 I&apos;m based in Mar del Plata, Argentina, where it&apos;s currently{" "}
-                <span className="text-white">{currentTime}</span>.
+                <span className="text-[#ff7a28]">{currentTime}</span>.
               </p>
             </div>
 

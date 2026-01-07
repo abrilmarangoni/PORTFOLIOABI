@@ -1,5 +1,6 @@
 import AboutSection, { AboutImage } from "@/components/AboutSection";
 import SelectedWork from "@/components/SelectedWork";
+import Journal from "@/components/Journal";
 import Navigation from "@/components/Navigation";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
         </div>
         
         {/* Horizontal line after image - full width */}
-        <div className="w-full my-16 lg:my-24">
+        <div className="w-full my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
@@ -27,12 +28,31 @@ export default function Home() {
         </div>
         
         {/* Horizontal line between Let's Connect and Selected Work - full width */}
-        <div className="w-full my-16 lg:my-24">
+        <div className="w-full my-[72px]">
           <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
         </div>
         
         <div className="w-full max-w-[550px] flex flex-col">
           <SelectedWork />
+        </div>
+        
+        {/* Horizontal line after Selected Work - full width */}
+        <div className="w-full my-[72px]">
+          <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
+        </div>
+        
+        <div className="w-full max-w-[550px] flex flex-col">
+          <Journal />
+        </div>
+        
+        {/* Horizontal line after Journal - full width */}
+        <div className="w-full my-[72px]">
+          <div className="h-px w-full opacity-80" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #333 0, #333 4px, transparent 4px, transparent 8px)' }} />
+        </div>
+        
+        {/* New Section - placeholder */}
+        <div className="w-full max-w-[550px] flex flex-col">
+          {/* New section content will go here */}
         </div>
       </div>
       <Navigation />
