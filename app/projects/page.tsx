@@ -193,7 +193,7 @@ export default function ProjectsPage() {
             The Entire Collection
           </h1>
           <p className="text-[#999] text-[13px] font-normal">
-            Everything I&apos;ve managed to finish (so far)
+            Everything I&apos;ve managed to finish (so far).
           </p>
         </div>
 
