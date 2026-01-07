@@ -1,56 +1,18 @@
 "use client";
 
-import { useState, useRef, ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { SentientSphere } from "./SentientSphere";
 
-function VideoWithHover({ src }: { src: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    // Load first frame when component mounts
-    if (videoRef.current) {
-      const video = videoRef.current;
-      const handleLoadedData = () => {
-        video.currentTime = 0;
-      };
-      video.addEventListener('loadeddata', handleLoadedData);
-      return () => {
-        video.removeEventListener('loadeddata', handleLoadedData);
-      };
-    }
-  }, []);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {
-        // Handle play error silently
-      });
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
+// Video que se reproduce automáticamente (para la landing)
+function VideoAutoPlay({ src, mirrored = false }: { src: string; mirrored?: boolean }) {
   return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="w-full h-full"
-    >
+    <div className="w-full h-full">
       <video
-        ref={videoRef}
+        autoPlay
         loop
         muted
         playsInline
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover ${mirrored ? "scale-x-[-1]" : ""}`}
         preload="auto"
       >
         <source src={src} type="video/mp4" />
@@ -60,33 +22,53 @@ function VideoWithHover({ src }: { src: string }) {
 }
 
 interface ProjectCardProps {
-  title: string;
   projectName: string;
   date: string;
+  href: string;
   children?: ReactNode;
 }
 
-function ProjectCard({ title, projectName, date, children }: ProjectCardProps) {
+function ProjectCard({ projectName, date, href, children }: ProjectCardProps) {
   return (
-    <div className="group cursor-pointer w-full">
+    <a href={href} className="group cursor-pointer w-full block">
       {/* Image container */}
       <div className="bg-black border border-[#333] rounded-t-[16px] aspect-[496/280] relative overflow-hidden">
-        {children ? (
+        {children && (
           <div className="absolute inset-0 w-full h-full">
             {children}
-          </div>
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-white text-[18px] font-normal">{title}</p>
           </div>
         )}
       </div>
       {/* Footer */}
       <div className="bg-[#111] border border-[#333] border-t-0 rounded-b-[16px] h-[60px] sm:h-[69px] px-4 flex items-center justify-between">
-        <p className="text-white text-[12px] sm:text-[13px] font-normal">{projectName}</p>
-        <p className="text-[#999] text-[12px] sm:text-[13px] font-normal">{date}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-white text-[12px] sm:text-[13px] font-normal">{projectName}</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <p className="text-[#999] text-[12px] sm:text-[13px] font-normal">{date}</p>
+          <span className="text-[#999] text-[12px] sm:text-[13px] font-normal group-hover:text-[#ff7a28] transition-colors flex items-center gap-1">
+            View
+            <svg 
+              width="12" 
+              height="12" 
+              viewBox="0 0 15 15" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              <path 
+                d="M5 3L10 7.5L5 12" 
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -101,32 +83,32 @@ export default function SelectedWork() {
       {/* Project Cards - Stacked vertically */}
       <div className="flex flex-col gap-8 sm:gap-12">
         <ProjectCard
-          title=""
           projectName="ABA AI - full stack project"
           date="Dec 28, 2025"
+          href="/projects/aba-ai"
         >
           <SentientSphere />
         </ProjectCard>
         <ProjectCard
-          title=""
           projectName="3d Orb Loop"
           date="Dec 22, 2025"
+          href="/projects/3d-orb-loop"
         >
-          <VideoWithHover src="/senal.mp4" />
+          <VideoAutoPlay src="/senal.mp4" mirrored />
         </ProjectCard>
         <ProjectCard
-          title=""
           projectName="Basement's Challenge Loop"
           date="Dec 22, 2025"
+          href="/projects/basement-challenge"
         >
-          <VideoWithHover src="/hooverbasement.mp4" />
+          <VideoAutoPlay src="/hooverbasement.mp4" />
         </ProjectCard>
         <ProjectCard
-          title=""
           projectName="Sand - Website Design"
           date="Dec 22, 2025"
+          href="/projects/sand-website"
         >
-          <VideoWithHover src="/hooversand.mp4" />
+          <VideoAutoPlay src="/hooversand.mp4" />
         </ProjectCard>
       </div>
       
